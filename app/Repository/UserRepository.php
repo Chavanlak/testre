@@ -12,8 +12,9 @@ class UserRepository{
         $user->username = $username;
         $user->email = $email;
         $user->password = Hash::make($password);
+        // $user->password =$password;
         $user->department = $department;
-        $user->phone = $phone;
+       $user->phone = $phone;
         return $user->save();
 
     }

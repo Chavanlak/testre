@@ -18,7 +18,9 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var array
+     *
+     *  <int, string>
      */
     protected $fillable = [
         'username',
@@ -28,7 +30,7 @@ class User extends Authenticatable
         'phone',
         'firstname',
         'lastname',
-        'userTypeId',
+        'userTypeId', 
     ];
 
     /**

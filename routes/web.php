@@ -25,20 +25,30 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::get('/recipe', function () {
-    return view('recipe');
-});
+// Route::get('/recipe', function () {
+//     return view('recipe');
+// });
 // Route::get('/allmember',[MemberInputController::class,'getall'])->middleware('isUser');
-Route::get('/allmember',[MemberInputController::class,'getall']);
+Route::get('/allmember', [MemberInputController::class, 'getall']);
 
-Route::get('/report',[MemberInputController::class,'index'])->middleware('isUser');
-Route::get('/home',[AuthController::class,'home']);
+Route::get('/report', [MemberInputController::class, 'index'])->middleware('isUser');
+Route::get('/home', [AuthController::class, 'home']);
 
 // Route::get('/register',[AuthController::class,'register']);
 // Route::post('/register',[AuthController::class,'registerPost']);
 
-Route::get('/login',[AuthController::class,'login']);
-Route::post('/login',[AuthController::class,'loginPost']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::post('/loginpost', [UserController::class, 'loginPost']);
 
-Route::get('/register',[UserController::class,'register']);
-Route::post('/registerpost',[UserController::class,'registerPost']);
+Route::get('/loginrecipe', [UserController::class, 'loginRecipe']);
+Route::post('/loginpostrecipe', [UserController::class, 'loginPostRecipe']);
+Route::get('/recipe', function () {
+    return view('recipe');
+})->middleware('auth');
+// Route::get('/register',[UserController::class,'register']);
+Route::get('/register', [UserController::class, 'register'])->name('register');
+Route::post('/registerpost', [UserController::class, 'registerPost']);
+
+
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+

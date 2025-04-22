@@ -22,12 +22,12 @@ class isUser
         //  }
 
         //  return redirect('/login');
-        if (Auth::user() && Auth::user()->userTypeId == 2) {
-            return $next($request);
-        }
-        else if(Auth::user() && Auth::user()->userTypeId == 1){
-            return redirect('/home');
-        }
+        // if (Auth::user() && Auth::user()->userTypeId == 2) {
+        //     return $next($request);
+        // }
+        // else if(Auth::user() && Auth::user()->userTypeId == 1){
+        //     return redirect('/home');
+        // }
            
     }
 }

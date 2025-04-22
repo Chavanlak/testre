@@ -140,7 +140,7 @@
 <body>
     <div class="wrapper">
         <div class="title"><span>เข้าสู่ระบบ</span></div>
-        <form action="/loginpost" method="post">
+        <form action="/loginpostrecipe" method="post">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="row">
                 <i class="fas fa-user"></i>
@@ -162,6 +162,16 @@
             @if (session('error'))
                 <div class="text-danger">{{ session('error') }}</div>
             @endif
+{{-- @if (session('error'))
+    <div style="color: red">{{ session('error') }}</div>
+@endif
+
+<form method="POST" action="/loginRecipe">
+    @csrf
+    <input type="text" name="username" placeholder="Username">
+    <input type="password" name="password" placeholder="Password">
+    <button type="submit">Login</button>
+</form> --}}
 
         </form>
     </div>

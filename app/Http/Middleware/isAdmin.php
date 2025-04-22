@@ -15,13 +15,13 @@ class isAdmin
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next)
-    {
-        if(Auth::user() && Auth::user()->userTypeId == 1){
-            return $next($request);
-        }elseif(Auth::user() && Auth::user()->userTypeId == 2){
-            return redirect('/home');
-        }
+    // public function handle(Request $request, Closure $next)
+    // {
+    //     if(Auth::user() && Auth::user()->userTypeId == 1){
+    //         return $next($request);
+    //     }elseif(Auth::user() && Auth::user()->userTypeId == 2){
+    //         return redirect('/home');
+    //     }
        
-    }
+    // }
 }
